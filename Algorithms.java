@@ -63,6 +63,26 @@ public class Algorithms {
 	}
 
 	public int computeDepthHelper(TreeNode tree, int depth)
+
+
+
+procedure findSAT(Graph):
+decreasingPostNumbers = depthFirstSearch(Graph.Reversed)
+listOfComponents = undirectedConnectedComponents(G)
+for connected in listOfComponents:
+		if literal and negation in connected, return Error
+		for each in connected:
+			if each is a literal, each == true
+			else, each == false
+
+points = FFT(p(x),!)
+for each in points: each^2
+pSquaredCoefficients = 1/n FFT(points,!1)
+p(x) = attach pSquaredCoefficients to polynomial
+pcubedPoints = (p(!0)q(!0), ..., p(!d1)q(!d1))
+pcubedCoefficients =1/n FFT(pcubedPoints,!1)
+check if there is a coefficient that corresponds toxt
+
 }
 
 
