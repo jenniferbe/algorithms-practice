@@ -64,7 +64,7 @@ public class Algorithms {
 
 	public int computeDepthHelper(TreeNode tree, int depth)
 
-
+}
 
 procedure findSAT(Graph):
 decreasingPostNumbers = depthFirstSearch(Graph.Reversed)
@@ -83,13 +83,87 @@ pcubedPoints = (p(!0)q(!0), ..., p(!d1)q(!d1))
 pcubedCoefficients =1/n FFT(pcubedPoints,!1)
 check if there is a coefficient that corresponds toxt
 
-}
+\textbf{procedure} findMajorityLinear(list):\\
+newList = copyOf(list);\\
+\textbf{while} newList $> 3$: \\
+$>>>$ \textbf{for} each pair \textbf{in} newList:\\
+$>>>>>>$ discard both if they are different\\
+$>>>>>>$ keep one element if they are the same\\
+$>>>>>>$ if it's the unpaired element, keep\\
+\textbf{for} each element \textbf{in} newList:\\
+$>>>$ \textbf{if} list.count(element) $>$ size(list)//2 \textbf{then return} element\\
+\textbf{else return} none
+
+
+\textbf{procedure} cheapestPath(cityA, cityB)\\
+stored = \textbf{new} List (containing cost, count)\\
+set all (cost, path) in stored to $(\infty$, ["a"])\\
+fringe = \textbf{new} PriorityQueue\\
+\textbf{for} all j \textbf{in} range 0 to n\\
+$>>>$ fringe.add( (( edge A to j, M[cityA][j]), M[cityA][j]) )\\
+\textbf{while} fringe \textbf{is not empty}\\
+$>>>$ (i, j), cost = fringe.pop\\
+$>>>$ \textbf{if} it's stored cost to j $>$ cost\\
+$>>>>>>$ stored[j] = (cost, path[i] + ["j"])\\
+$>>>>>>$ \textbf{if} j = cityB \textbf{return} cost, path[j]\\
+$>>>>>>$ \textbf{for} all k \textbf{in} range 0 to n\\
+$>>>>>>>>>$ fringe.add( (( (j, k), cost + m[j][k]), cost + m[j][k] + len(stored path of j))\\
+\textbf{return} None
+
+\textbf{procedure} findShortestPath(G, l, H, s, t)\\
+dijkstras(G, l, s)\\
+dijkstras(G, l, t)\\
+pq = priorityQueue\\
+for each edge=(i,j) $\in$ H:\\
+$>>>$ pq.add( edge, dist(s, i) + l(i, j) + dist(j, t))\\
+\textbf{return} pq.pop()
+
+\textbf{procedure}  preventConflict(E (enemy edges) )\\
+for i in range 1 up to n:\\
+$>>>$ roomA, roomB, uninitialized = 0, 0, list\\
+$>>>$ for each in (i, v) in E:\\
+$>>>>>>$ if in room A: roomA++\\
+$>>>>>>$ else if in room B: roomB++\\
+$>>>>>>$ else, add into unitialized\\
+$>>>$ put into roomA if roomA < roomB, else put into roomB\\
 
 
 
+\textbf{procedure} superSchmoozers(G):\\
+for all v in V:\\
+$>>> $ put in priorityQueue, Q, with priority $=$ connection count\\
+while Q is not empty:\\
+$>>> $ vertex $=$ pop Q\\
+$>>>>>> $ if neighbors of vertex $<$ 20:\\
+$>>>>>>>>> $ for each edge (vertex, u) in E:\\
+$>>>>>>>>>>>> $ delete edge (vertex, u)\\
+$>>>>>>>>>>>> $ change priority of u\\
+$>>>>>>>>> $ delete vertex in set V
 
 
 
+\textbf{procedure} ternaryHuffman(f):\\
+let $H$ be a priority queue of integers, ordered by f\\
+for $i=1$ to $n$: insert($H, i$)\\
+if $n$ is odd, increment n and add a dummy node with a freq of 0\\
+$k = n + 1$\\
+while $H$ has more than 1 entry:\\
+$>>>$ $i$ = deletemin($H$), $j$ = deletemin($H$), $k$ = deletemin($H$)\\
+$>>>$ create a node numbered $k$ with children $i,j,k$\\
+$>>>$ $f[k] = f[i] + f[j] + f[k]$\\
+$>>>$ insert($H,k$)\\
+$>>>$ $k++$
 
 
-
+\textbf{procedure} longestPalindrome(string):\\
+rstring = reversal of the string\\
+n = length of string
+for $i = 0, 1, 2,...,n$:\\
+$>>>$ E(i, 0) = 0\\
+$>>>$ E(0, i) = 0\\
+for $i = 0, 1, 2,...,n:$\\
+$>>>$ for $j = 0, 1, 2,...,n:$\\
+$>>>>>>>$ $E(i,j) =$ max{ $E(i-1, j), E(i, j-1), E(i-1, j-1) + sim(i,j)$}\\
+\textbf{return} $E(n, n)$\\
+\textbf{procedure} sim(i, j):\\
+\textbf{if} string[i] == rstring[j] \textbf{return} 1, \textbf{else return} 0
